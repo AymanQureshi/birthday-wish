@@ -1,0 +1,506 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F7F9FB;
+  color: #444;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+.dark-mode .intro-content h1,
+.dark-mode .tagline {
+  color: #ffcccb;
+}
+.dark-mode .music-btn {
+  background: #ff6b6b;
+  color: #000;
+}
+.dark-mode .wishes-feed {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+.dark-mode .wish-item {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffcccb;
+}
+.dark-mode .memory-form {
+  background: #1a1a1a;
+  border-color: #333;
+}
+.dark-mode input,
+.dark-mode textarea {
+  background: #262626;
+  color: #fff;
+  border: 1px solid #555;
+}
+.dark-mode button {
+  background: #ff6b6b;
+  color: #121212;
+}
+.dark-mode button:hover {
+  background: #ff3b3b;
+}
+.dark-mode .memory-card {
+  background: #1a1a1a;
+  color: #ffcccb;
+  border: 1px solid #333;
+}
+.dark-mode .memory-card-front {
+  color: #ff7b7b;
+}
+.dark-mode .memory-card-back {
+  background: #222;
+  color: #ddd;
+}
+.dark-mode .birthday-card-section {
+  background: #1a1a1a;
+}
+.dark-mode .glow-text {
+  color: #ff4b5c;
+  text-shadow: 0 0 10px rgba(255, 75, 92, 0.8);
+}
+.dark-mode .dev-corner {
+  background: #1a1a1a;
+  border-color: #333;
+  color: #ccc;
+}
+.dark-mode .code-block {
+  background: #2a2a2a;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff8a80;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s, background 0.3s;
+}
+.dark-mode-btn:hover {
+  transform: scale(1.1);
+  background: #ff4d4d;
+}
+
+/* Header Section */
+.intro {
+  position: relative;
+  height: 50vh;
+  background: url('birthday-collage.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+}
+.intro-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+.intro-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2C3E50;
+}
+.tagline {
+  font-size: 1.1rem;
+  color: #6C7A89;
+  margin-bottom: 15px;
+}
+.music-btn {
+  background: #FFB6C1;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.music-btn:hover {
+  background: #FFA3B1;
+}
+
+/* Wishes Feed Section */
+.wishes-feed-section {
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+.wishes-feed-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #2C3E50;
+}
+.wishes-feed {
+  height: 180px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.wish-item {
+  background: #f0f0f0;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #333;
+  animation: slideUp 0.6s ease;
+}
+
+/* Memory Form Section */
+.memory-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 35px 20px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.memory-form h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #2C3E50;
+}
+#messageForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#messageForm input,
+#messageForm textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: border 0.3s;
+}
+#messageForm input:focus,
+#messageForm textarea:focus {
+  border-color: #FFB6C1;
+  outline: none;
+}
+#messageForm button {
+  padding: 12px;
+  background: #FFB6C1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#messageForm button:hover {
+  background: #FFA3B1;
+}
+
+/* Memory Wall Section */
+.memory-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.memory-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.memory-card.flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+.memory-card-front,
+.memory-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: 10px;
+}
+.memory-card-front {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FF7F9C;
+}
+.memory-card-back {
+  background: #FDFDFD;
+  transform: rotateY(180deg);
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+}
+
+/* Gallery Slider Section */
+.gallery-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+.gallery-section h2 {
+  font-size: 1.8rem;
+  color: #2C3E50;
+  margin-bottom: 15px;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,182,193,0.8);
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.prev:hover, .next:hover {
+  background: rgba(255,182,193,1);
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+.slides img {
+    width: 100%; /* Take full width of slide */
+    max-width: 100%; /* Ensure image doesn't exceed slide width */
+    height: auto;   /* Scale height proportionally to width */
+    display: block; /* Prevents extra space below image */
+    object-fit: contain; /* Or 'cover', try both to see which you prefer */
+}
+
+/* Birthday Card Section */
+.birthday-card-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 50px 20px;
+  background: #FFF4F8;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.birthday-card-section h2 {
+  font-size: 1.8rem;
+  color: #C94C82;
+  margin-bottom: 25px;
+}
+.card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.glow-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #C94C82;
+  text-shadow: 0 0 6px rgba(201,76,130,0.3);
+  margin-bottom: 18px;
+}
+.gift-box {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 18px;
+  position: relative;
+  animation: bounce 1.5s infinite;
+}
+.lid {
+  width: 100%;
+  height: 35px;
+  background: #C94C82;
+  position: absolute;
+  top: 0;
+  border-radius: 4px;
+  transition: transform 0.4s ease;
+}
+.box {
+  width: 100%;
+  height: 80px;
+  background: #E07A99;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+}
+.gift-box:hover .lid {
+  transform: translateY(-20px);
+}
+.message {
+  font-size: 1rem;
+  padding: 10px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.gift-box:hover .message {
+  opacity: 1;
+}
+.click-text {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 15px;
+}
+
+/* Confetti Canvas */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Developer's Corner */
+.dev-corner {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  background: #1E1E1E;
+  border-radius: 8px;
+  color: #ccc;
+  text-align: left;
+}
+.dev-corner h2 {
+  font-size: 1.8rem;
+  color: #C94C82;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.code-block {
+  background: #2E2E2E;
+  padding: 20px;
+  border-radius: 4px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.9rem;
+  color: #dcdcdc;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+.dev-note {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Floating Balloons */
+.balloons-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 60px;
+  background: #A0D9FF; /* default, will be overwritten */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp linear;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0.2;
+  }
+}

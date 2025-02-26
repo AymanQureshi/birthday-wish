@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Anish</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating Balloons Background -->
+  <div class="balloons-container"></div>
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" class="dark-mode-btn">Dark Mode</button>
+
+  <!-- Header Section -->
+  <header class="intro">
+    <div class="overlay"></div>
+    <div class="intro-content">
+      <h1>Happy Birthday, Anish!</h1>
+      <p class="tagline">It's your special day --- get out there and celebrate!</p>
+      <button id="playMusic" class="music-btn">Play Birthday Tune</button>
+      <audio id="birthdayAudio" loop>
+        <source src="happy-birthday-266285.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </header>
+
+  <!-- Live Wishes Feed Section -->
+  <section class="wishes-feed-section">
+    <h2>Live Birthday Wishes</h2>
+    <div class="wishes-feed" id="wishesFeed"></div>
+  </section>
+
+  <!-- Memory Form Section -->
+  <section class="memory-form">
+    <h2>Share a Memory</h2>
+    <form id="messageForm">
+      <input type="text" id="nameInput" placeholder="Your Name" required />
+      <textarea id="messageInput" placeholder="Your Message..." required></textarea>
+      <button type="submit">Add Memory</button>
+    </form>
+  </section>
+
+  <!-- Memory Wall Section -->
+  <section class="memory-wall" id="memoryWall"></section>
+
+  <!-- Gallery Slider Section -->
+  <section class="gallery-section">
+    <h2>Gallery of Memories</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="unhinged anish 1.jpg" alt="Gallery Image 1" />
+        <img src="unhinged anish 2.jpg" alt="Gallery Image 2" />
+        <img src="unhinged anish 3.jpg" alt="Gallery Image 3" />
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Birthday Card Section with Confetti -->
+  <section class="birthday-card-section">
+    <h2>A Special Surprise</h2>
+    <div class="card" onclick="startConfetti()">
+      <h3 class="glow-text">Happy Birthday, Anish!</h3>
+      <div class="gift-box">
+        <div class="lid"></div>
+        <div class="box">
+          <p class="message">Wishing you endless happiness!</p>
+        </div>
+      </div>
+      <p class="click-text">Click for gentle confetti</p>
+    </div>
+    <canvas id="confettiCanvas"></canvas>
+  </section>
+
+  <!-- Developer's Corner -->
+  <section class="dev-corner">
+    <h2>Developer's Corner</h2>
+    <div class="code-block">
+      <pre><code>
+// A developer's birthday wish:
+function celebrate() {
+    const message = "Happy Birthday, Anish! May your code be as elegant as your ideas.";
+    console.log(message);
+    return message;
+}
+celebrate();
+      </code></pre>
+    </div>
+    <p class="dev-note">May your code always run smoothly and your days be filled with inspiration.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
